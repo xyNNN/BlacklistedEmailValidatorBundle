@@ -42,6 +42,7 @@ class XynnnBlacklistedEmailValidatorExtension extends Extension
      */
     private function loadDefaultHosts()
     {
+        // I've to define more defaults
         return [
             'byom.de',
         ];
