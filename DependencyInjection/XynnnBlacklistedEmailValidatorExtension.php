@@ -25,9 +25,25 @@ class XynnnBlacklistedEmailValidatorExtension extends Extension
     {
         $configuration = new Configuration();
         $this->processConfiguration($configuration, $configs);
-        $container->setParameter('xynnn_blacklisted_email_validator.hosts', $configs[0]['hosts']);
+
+        $hosts = $this->loadDefaultHosts();
+        if (array_key_exists('hosts', $configs[0]) && null !== $configs[0]['hosts']) {
+            $hosts = $configs[0]['hosts'];
+        }
+
+        $container->setParameter('xynnn_blacklisted_email_validator.hosts', $hosts);
 
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.xml');
+    }
+
+    /**
+     * @return array
+     */
+    private function loadDefaultHosts()
+    {
+        return [
+            'byom.de',
+        ];
     }
 }

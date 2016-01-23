@@ -25,7 +25,7 @@ class Configuration implements ConfigurationInterface
         $rootNode
             ->children()
                 ->arrayNode('hosts')
-                    ->prototype('scalar')->end()
+                    ->prototype('scalar')
                 ->end()
             ->end();
 
