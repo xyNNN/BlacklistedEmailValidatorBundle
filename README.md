@@ -46,5 +46,5 @@ Normally without to adjust the configuration it will blacklist the hostnames whi
 + [twitter/pbraeutigam](http://twitter.com/pbraeutigam)
 
 ## License
-Copyright (c) 2015 Philipp Bräutigam  
+Copyright (c) 2016 Philipp Bräutigam
 This repository is released under the GNU LGPL v3.0 license.
