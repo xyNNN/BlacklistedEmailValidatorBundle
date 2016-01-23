@@ -10,6 +10,7 @@
 
 namespace Xynnn\BlacklistedEmailValidator\Tests\Validator\Constraints;
 
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
 use Xynnn\BlacklistedEmailValidator\Validator\Constraints\BlacklistedEmail;
 use Xynnn\BlacklistedEmailValidator\Validator\Constraints\BlacklistedEmailValidator;
@@ -23,11 +24,13 @@ class BlacklistedEmailValidatorTest extends \PHPUnit_Framework_TestCase
     public function testValid()
     {
         /**
-         * @var BlacklistedEmailValidator               $validator
-         * @var BlacklistedEmail                        $constraint
-         * @var \Mockery\Mock|ExecutionContextInterface $context
+         * @var BlacklistedEmailValidator        $validator
+         * @var BlacklistedEmail                 $constraint
+         * @var \Mockery\Mock|ContainerInterface $container
          */
-        list($validator, $constraint, $context) = $this->getValidator();
+        list($validator, $constraint, , $container) = $this->getValidator();
+
+        $container->shouldReceive('getParameter');
 
         $validator->validate(self::VALID_MAIL_ADDRESS, $constraint);
     }
@@ -38,8 +41,11 @@ class BlacklistedEmailValidatorTest extends \PHPUnit_Framework_TestCase
          * @var BlacklistedEmailValidator               $validator
          * @var BlacklistedEmail                        $constraint
          * @var \Mockery\Mock|ExecutionContextInterface $context
+         * @var \Mockery\Mock|ContainerInterface        $container
          */
-        list($validator, $constraint, $context) = $this->getValidator();
+        list($validator, $constraint, $context, $container) = $this->getValidator();
+
+        $container->shouldReceive('getParameter');
 
         $context->shouldReceive('buildViolation')
             ->with($constraint->message)
@@ -59,13 +65,16 @@ class BlacklistedEmailValidatorTest extends \PHPUnit_Framework_TestCase
      */
     private function getValidator()
     {
-        $validator = new BlacklistedEmailValidator();
+        /** @var \Mockery\Mock|ContainerInterface $container */
+        $container = \Mockery::mock(ContainerInterface::class);
+
+        $validator = new BlacklistedEmailValidator($container);
         $constraint = new BlacklistedEmail();
 
         /** @var \Mockery\Mock|ExecutionContextInterface $context */
         $context = \Mockery::mock(ExecutionContextInterface::class);
         $validator->initialize($context);
 
-        return [$validator, $constraint, $context];
+        return [$validator, $constraint, $context, $container];
     }
 }
