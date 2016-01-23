@@ -32,7 +32,7 @@ Register the bundle in ```app/AppKernel.php```
 
 Add the new registered Constraint to your models or get it from the service container as a standalone service like every time. For more information about the Symfony validation package please look at [The Symfony Book](http://symfony.com/doc/current/book/validation.html).
 
-Normally without to adjust the configuration it will blacklist the hostnames which are defined in the ```XynnnBlacklistedEmailValidatorExtension```. You can override these defaults with the provided configuration ability.
+Normally without to adjust the configuration it will blacklist the hostnames which are defined in the service definition under ```Resources/config/services.xml```. You can override these defaults with the provided configuration ability.
 
     xynnn_blacklisted_email_validator:
         strict: true // Enable strict mode for email validator
