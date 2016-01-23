@@ -8,12 +8,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Xynnn\BlacklistedEmailValidator\Tests\Validator\Constraints;
+namespace Xynnn\BlacklistedEmailValidatorBundle\Tests\Validator\Constraints;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
-use Xynnn\BlacklistedEmailValidator\Validator\Constraints\BlacklistedEmail;
-use Xynnn\BlacklistedEmailValidator\Validator\Constraints\BlacklistedEmailValidator;
+use Xynnn\BlacklistedEmailValidatorBundle\Validator\Constraints\BlacklistedEmail;
+use Xynnn\BlacklistedEmailValidatorBundle\Validator\Constraints\BlacklistedEmailValidator;
 
 class BlacklistedEmailValidatorTest extends \PHPUnit_Framework_TestCase
 {

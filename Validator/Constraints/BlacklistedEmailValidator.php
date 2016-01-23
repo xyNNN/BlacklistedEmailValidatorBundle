@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Xynnn\BlacklistedEmailValidator\Validator\Constraints;
+namespace Xynnn\BlacklistedEmailValidatorBundle\Validator\Constraints;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Validator\Constraint;
