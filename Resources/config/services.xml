@@ -7,7 +7,7 @@
     <services>
 
         <service id="xynnn_blacklisted_email_validator.validator.blacklisted_email_validator"
-                 class="Xynnn\BlacklistedEmailValidator\Validator\Constraints\BlacklistedEmailValidator">
+                 class="Xynnn\BlacklistedEmailValidatorBundle\Validator\Constraints\BlacklistedEmailValidator">
             <argument type="service" id="service_container"/>
 
             <tag name="validator.constraint_validator" alias="blacklisted_email_validator"/>
