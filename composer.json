@@ -28,12 +28,12 @@
     "mockery/mockery": "^0.9.4"
   },
   "autoload": {
-    "psr-4": {
+    "psr-0": {
       "Xynnn\\BlacklistedEmailValidator\\": ""
     }
   },
   "autoload-dev": {
-    "psr-4": {
+    "psr-0": {
       "Xynnn\\BlacklistedEmailValidator\\Tests\\": "Tests/"
     }
   },
