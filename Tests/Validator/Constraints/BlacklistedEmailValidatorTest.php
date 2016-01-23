@@ -24,11 +24,11 @@ class BlacklistedEmailValidatorTest extends \PHPUnit_Framework_TestCase
     public function testValid()
     {
         /**
-         * @var BlacklistedEmailValidator        $validator
-         * @var BlacklistedEmail                 $constraint
-         * @var \Mockery\Mock|ContainerInterface $container
+         * @var BlacklistedEmailValidator $validator
+         * @var BlacklistedEmail          $constraint
+         * @var \Mockery\Mock             $container
          */
-        list($validator, $constraint,, $container) = $this->getValidator();
+        list($validator, $constraint, , $container) = $this->getValidator();
 
         $validator->validate(self::VALID_MAIL_ADDRESS, $constraint);
     }
@@ -36,10 +36,10 @@ class BlacklistedEmailValidatorTest extends \PHPUnit_Framework_TestCase
     public function testBlacklisted()
     {
         /**
-         * @var BlacklistedEmailValidator               $validator
-         * @var BlacklistedEmail                        $constraint
-         * @var \Mockery\Mock|ExecutionContextInterface $context
-         * @var \Mockery\Mock|ContainerInterface        $container
+         * @var BlacklistedEmailValidator $validator
+         * @var BlacklistedEmail          $constraint
+         * @var \Mockery\Mock             $context
+         * @var \Mockery\Mock             $container
          */
         list($validator, $constraint, $context, $container) = $this->getValidator();
 
