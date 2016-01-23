@@ -37,7 +37,6 @@
       "Xynnn\\BlacklistedEmailValidatorBundle\\Tests\\": "Tests/"
     }
   },
-  "target-dir": "Xynnn/BlacklistedEmailValidatorBundle",
   "config": {
     "bin-dir": "bin"
   }
