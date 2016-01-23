@@ -1,7 +1,8 @@
 # BlacklistedEmailValidatorBundle
 
 [![Software License](https://img.shields.io/badge/license-LGPL%203.0-brightgreen.svg?style=flat-square)](LICENSE)
-[![Build Status](https://travis-ci.org/xyNNN/BlacklistedEmailValidatorBundle.svg?branch=master)](https://travis-ci.org/xyNNN/BlacklistedEmailValidatorBundle)
+[![Code Coverage](https://scrutinizer-ci.com/g/xyNNN/BlacklistedEmailValidatorBundle/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/xyNNN/BlacklistedEmailValidatorBundle/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/xyNNN/BlacklistedEmailValidatorBundle/badges/build.png?b=master)](https://scrutinizer-ci.com/g/xyNNN/BlacklistedEmailValidatorBundle/build-status/master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/xyNNN/BlacklistedEmailValidatorBundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/xyNNN/BlacklistedEmailValidatorBundle/?branch=master)
 
 An extended email address validator which validates against blacklisted hostnames for Symfony 2. It's designed for easy usage! Install it in a Symfony project or also use it as framework-agnostic library.
