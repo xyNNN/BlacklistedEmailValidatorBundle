@@ -11,6 +11,14 @@
             <argument>false</argument>
             <argument type="collection">
                 <argument>byom.de</argument>
+                <argument>trash-mail.com</argument>
+                <argument>trashmail.de</argument>
+                <argument>emailgo.de</argument>
+                <argument>trashmail.com</argument>
+                <argument>discard.email</argument>
+                <argument>fyii.de</argument>
+                <argument>spoofmail.de</argument>
+                <argument>trashmail.ws</argument>
             </argument>
 
             <tag name="validator.constraint_validator" alias="blacklisted_email_validator"/>
