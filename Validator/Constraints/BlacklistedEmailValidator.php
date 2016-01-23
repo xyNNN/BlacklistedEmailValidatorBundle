@@ -13,9 +13,15 @@ namespace Xynnn\BlacklistedEmailValidatorBundle\Validator\Constraints;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\Constraints\EmailValidator;
+use Symfony\Component\Validator\Context\ExecutionContextInterface;
 
 class BlacklistedEmailValidator extends EmailValidator
 {
+    /**
+     * @var ExecutionContextInterface
+     */
+    protected $context;
+
     /**
      * An array of blacklisted hostnames which aren't allowed.
      *
@@ -24,13 +30,13 @@ class BlacklistedEmailValidator extends EmailValidator
     private $blacklist = [];
 
     /**
-     * @param ContainerInterface $container
-     * @param bool               $strict
+     * @param bool  $strict
+     * @param array $hosts
      */
-    public function __construct(ContainerInterface $container, $strict = false)
+    public function __construct($strict = false, $hosts = [])
     {
         parent::__construct($strict);
-        $this->blacklist = $container->getParameter('xynnn_blacklisted_email_validator.hosts');
+        $this->blacklist = $hosts;
     }
 
     /**
@@ -42,9 +48,9 @@ class BlacklistedEmailValidator extends EmailValidator
 
         $host = substr($value, strpos($value, '@') + 1);
         if (in_array($host, $this->blacklist)) {
-            $this->context->buildViolation($constraint->message)
-                ->setParameter('%host%', $host)
-                ->addViolation();
+            $this->context->addViolation($constraint->message, [
+                '%host%' => $host,
+            ]);
         }
     }
 }

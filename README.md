@@ -1,9 +1,9 @@
 # BlacklistedEmailValidatorBundle
 
-[![Software License](https://img.shields.io/badge/license-LGPL%203.0-brightgreen.svg?style=flat-square)](LICENSE)
 [![Code Coverage](https://scrutinizer-ci.com/g/xyNNN/BlacklistedEmailValidatorBundle/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/xyNNN/BlacklistedEmailValidatorBundle/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/xyNNN/BlacklistedEmailValidatorBundle/badges/build.png?b=master)](https://scrutinizer-ci.com/g/xyNNN/BlacklistedEmailValidatorBundle/build-status/master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/xyNNN/BlacklistedEmailValidatorBundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/xyNNN/BlacklistedEmailValidatorBundle/?branch=master)
+[![Latest Stable Version](https://poser.pugx.org/xynnn/blacklisted-email-validator-bundle/v/stable)](https://packagist.org/packages/xynnn/blacklisted-email-validator-bundle) [![Total Downloads](https://poser.pugx.org/xynnn/blacklisted-email-validator-bundle/downloads)](https://packagist.org/packages/xynnn/blacklisted-email-validator-bundle) [![Latest Unstable Version](https://poser.pugx.org/xynnn/blacklisted-email-validator-bundle/v/unstable)](https://packagist.org/packages/xynnn/blacklisted-email-validator-bundle) [![License](https://poser.pugx.org/xynnn/blacklisted-email-validator-bundle/license)](https://packagist.org/packages/xynnn/blacklisted-email-validator-bundle)
 
 An extended email address validator which validates against blacklisted hostnames for Symfony 2. It's designed for easy usage! Install it in a Symfony project or also use it as framework-agnostic library.
 

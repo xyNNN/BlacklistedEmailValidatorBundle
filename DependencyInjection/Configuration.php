@@ -22,6 +22,12 @@ class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('xynnn_blacklisted_email_validator');
+
+        $rootNode
+            ->children()
+                ->booleanNode('strict')
+            ->end();
+
         $rootNode
             ->children()
                 ->arrayNode('hosts')

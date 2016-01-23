@@ -12,6 +12,7 @@ namespace Xynnn\BlacklistedEmailValidatorBundle\Tests\Validator\Constraints;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
+use Symfony\Component\Validator\Violation\ConstraintViolationBuilderInterface;
 use Xynnn\BlacklistedEmailValidatorBundle\Validator\Constraints\BlacklistedEmail;
 use Xynnn\BlacklistedEmailValidatorBundle\Validator\Constraints\BlacklistedEmailValidator;
 
@@ -19,16 +20,15 @@ class BlacklistedEmailValidatorTest extends \PHPUnit_Framework_TestCase
 {
     const VALID_MAIL_ADDRESS = 'valid@example.com';
 
-    const BLACKLISTED_MAIL_ADDRESS = 'blacklisted@trashmail.de';
+    const BLACKLISTED_MAIL_ADDRESS = 'blacklisted@phpunit.de';
 
     public function testValid()
     {
         /**
          * @var BlacklistedEmailValidator $validator
          * @var BlacklistedEmail          $constraint
-         * @var \Mockery\Mock             $container
          */
-        list($validator, $constraint, , $container) = $this->getValidator();
+        list($validator, $constraint) = $this->getValidator();
 
         $validator->validate(self::VALID_MAIL_ADDRESS, $constraint);
     }
@@ -39,21 +39,11 @@ class BlacklistedEmailValidatorTest extends \PHPUnit_Framework_TestCase
          * @var BlacklistedEmailValidator $validator
          * @var BlacklistedEmail          $constraint
          * @var \Mockery\Mock             $context
-         * @var \Mockery\Mock             $container
          */
-        list($validator, $constraint, $context, $container) = $this->getValidator();
+        list($validator, $constraint, $context) = $this->getValidator();
 
-        $container->shouldReceive('getParameter');
-
-        $context->shouldReceive('buildViolation')
-            ->with($constraint->message)
-            ->andReturn($context);
-
-        $context->shouldReceive('setParameter')
-            ->with('%host%', 'trashmail.de')
-            ->andReturn($context);
-
-        $context->shouldReceive('addViolation');
+        $context->shouldReceive('addViolation')
+            ->with($constraint->message, ['%host%' => 'phpunit.de']);
 
         $validator->validate(self::BLACKLISTED_MAIL_ADDRESS, $constraint);
     }
@@ -63,19 +53,13 @@ class BlacklistedEmailValidatorTest extends \PHPUnit_Framework_TestCase
      */
     private function getValidator()
     {
-        /** @var \Mockery\Mock|ContainerInterface $container */
-        $container = \Mockery::mock(ContainerInterface::class);
-        $container->shouldReceive('getParameter')
-            ->with('xynnn_blacklisted_email_validator.hosts')
-            ->andReturn(['domain1.com']);
-
-        $validator = new BlacklistedEmailValidator($container);
+        $validator = new BlacklistedEmailValidator(false, ['phpunit.de']);
         $constraint = new BlacklistedEmail();
 
         /** @var \Mockery\Mock|ExecutionContextInterface $context */
         $context = \Mockery::mock(ExecutionContextInterface::class);
         $validator->initialize($context);
 
-        return [$validator, $constraint, $context, $container];
+        return [$validator, $constraint, $context];
     }
 }

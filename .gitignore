@@ -4,3 +4,6 @@
 # Composer
 bin/
 vendor/
+
+# PHPUnit
+build/

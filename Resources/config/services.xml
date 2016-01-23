@@ -8,7 +8,10 @@
 
         <service id="xynnn_blacklisted_email_validator.validator.blacklisted_email_validator"
                  class="Xynnn\BlacklistedEmailValidatorBundle\Validator\Constraints\BlacklistedEmailValidator">
-            <argument type="service" id="service_container"/>
+            <argument>false</argument>
+            <argument type="collection">
+                <argument>byom.de</argument>
+            </argument>
 
             <tag name="validator.constraint_validator" alias="blacklisted_email_validator"/>
         </service>
