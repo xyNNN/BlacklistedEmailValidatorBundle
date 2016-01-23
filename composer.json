@@ -1,8 +1,12 @@
 {
   "name": "xynnn/blacklisted-email-validator-bundle",
   "type": "library",
-  "description": "",
+  "description": "An extended email address validator which validates against blacklisted hostnames for Symfony 2",
   "keywords": [
+    "symfony",
+    "validator",
+    "email",
+    "blacklist"
   ],
   "homepage": "https://github.com/xyNNN/BlacklistedEmailValidatorBundle",
   "license": "GNU LGPL v3.0",
