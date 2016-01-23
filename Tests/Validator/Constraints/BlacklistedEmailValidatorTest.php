@@ -28,9 +28,7 @@ class BlacklistedEmailValidatorTest extends \PHPUnit_Framework_TestCase
          * @var BlacklistedEmail                 $constraint
          * @var \Mockery\Mock|ContainerInterface $container
          */
-        list($validator, $constraint, , $container) = $this->getValidator();
-
-        $container->shouldReceive('getParameter');
+        list($validator, $constraint,, $container) = $this->getValidator();
 
         $validator->validate(self::VALID_MAIL_ADDRESS, $constraint);
     }
@@ -67,6 +65,9 @@ class BlacklistedEmailValidatorTest extends \PHPUnit_Framework_TestCase
     {
         /** @var \Mockery\Mock|ContainerInterface $container */
         $container = \Mockery::mock(ContainerInterface::class);
+        $container->shouldReceive('getParameter')
+            ->with('xynnn_blacklisted_email_validator.hosts')
+            ->andReturn(['domain1.com']);
 
         $validator = new BlacklistedEmailValidator($container);
         $constraint = new BlacklistedEmail();
