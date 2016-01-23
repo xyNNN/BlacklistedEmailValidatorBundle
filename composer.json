@@ -29,14 +29,15 @@
   },
   "autoload": {
     "psr-0": {
-      "Xynnn\\BlacklistedEmailValidator\\": ""
+      "Xynnn\\BlacklistedEmailValidatorBundle\\": ""
     }
   },
   "autoload-dev": {
     "psr-0": {
-      "Xynnn\\BlacklistedEmailValidator\\Tests\\": "Tests/"
+      "Xynnn\\BlacklistedEmailValidatorBundle\\Tests\\": "Tests/"
     }
   },
+  "target-dir" : "Xynnn/BlacklistedEmailValidatorBundle",
   "config": {
     "bin-dir": "bin"
   }
