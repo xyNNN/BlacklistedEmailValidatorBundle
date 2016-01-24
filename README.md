@@ -3,7 +3,7 @@
 [![Code Coverage](https://scrutinizer-ci.com/g/xyNNN/BlacklistedEmailValidatorBundle/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/xyNNN/BlacklistedEmailValidatorBundle/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/xyNNN/BlacklistedEmailValidatorBundle/badges/build.png?b=master)](https://scrutinizer-ci.com/g/xyNNN/BlacklistedEmailValidatorBundle/build-status/master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/xyNNN/BlacklistedEmailValidatorBundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/xyNNN/BlacklistedEmailValidatorBundle/?branch=master)
-[![Latest Stable Version](https://poser.pugx.org/xynnn/blacklisted-email-validator-bundle/v/stable)](https://packagist.org/packages/xynnn/blacklisted-email-validator-bundle) [![Total Downloads](https://poser.pugx.org/xynnn/blacklisted-email-validator-bundle/downloads)](https://packagist.org/packages/xynnn/blacklisted-email-validator-bundle) [![Latest Unstable Version](https://poser.pugx.org/xynnn/blacklisted-email-validator-bundle/v/unstable)](https://packagist.org/packages/xynnn/blacklisted-email-validator-bundle) [![License](https://poser.pugx.org/xynnn/blacklisted-email-validator-bundle/license)](https://packagist.org/packages/xynnn/blacklisted-email-validator-bundle)
+[![Latest Stable Version](https://poser.pugx.org/xynnn/blacklisted-email-validator-bundle/v/stable)](https://packagist.org/packages/xynnn/blacklisted-email-validator-bundle) [![Total Downloads](https://poser.pugx.org/xynnn/blacklisted-email-validator-bundle/downloads)](https://packagist.org/packages/xynnn/blacklisted-email-validator-bundle) [![License](https://poser.pugx.org/xynnn/blacklisted-email-validator-bundle/license)](https://packagist.org/packages/xynnn/blacklisted-email-validator-bundle)
 
 An extended email address validator which validates against blacklisted hostnames for Symfony 2. It's designed for easy usage! Install it in a Symfony project or also use it as framework-agnostic library.
 
@@ -46,5 +46,5 @@ Normally without to adjust the configuration it will blacklist the hostnames whi
 + [twitter/pbraeutigam](http://twitter.com/pbraeutigam)
 
 ## License
-Copyright (c) 2016 Philipp Bräutigam  
+Copyright (c) 2016 Philipp Bräutigam
 This repository is released under the GNU LGPL v3.0 license.
